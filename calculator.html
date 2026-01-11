@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <style>
+      .container {
+        border: 1px solid #000;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 12rem;
+        height: auto;
+        padding: 10px;
+        background-color: #12124f;
+      }
+
+      .output {
+        border: 1px solid green;
+        width: 9rem;
+        height: 50px;
+        margin: 10px;
+        padding: 0px 5px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #000;
+      }
+
+      .punch {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        row-gap: 5px;
+        column-gap: 5px;
+        border-radius: 2px;
+      }
+
+      button {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        background-color: #ff0000;
+        color: #fff;
+        font-weight: 700;
+        font-family: cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="output"></div>
+
+      <div class="punch">
+        <button
+          onclick="
+          calculation += 1; 
+          console.log(calculation);
+        "
+        >
+          1
+        </button>
+
+        <button
+          onclick="
+          calculation += 2; 
+          console.log(calculation);
+        "
+        >
+          2
+        </button>
+
+        <button
+          onclick="
+          calculation += 3; 
+          console.log(calculation);
+        "
+        >
+          3
+        </button>
+
+        <button
+          onclick="
+          calculation += 4;
+          console.log(calculation);
+        "
+        >
+          4
+        </button>
+
+        <button
+          onclick="
+          calculation += 5;
+          console.log(calculation);
+        "
+        >
+          5
+        </button>
+
+        <button
+          onclick="
+          calculation += 6;
+          console.log(calculation);
+        "
+        >
+          6
+        </button>
+
+        <button
+          onclick="
+          calculation += 7;
+          console.log(calculation);
+        "
+        >
+          7
+        </button>
+
+        <button
+          onclick="
+          calculation += 8;
+          console.log(calculation);
+        "
+        >
+          8
+        </button>
+
+        <button
+          onclick="
+          calculation += 9;
+          console.log(calculation);
+        "
+        >
+          9
+        </button>
+
+        <button
+          onclick="
+          calculation += ' + '
+          console.log(calculation);
+        "
+        >
+          +
+        </button>
+
+        <button
+          onclick="
+          calculation += 0;
+          console.log(calculation);
+        "
+        >
+          0
+        </button>
+
+        <button
+          onclick="
+          calculation += ' - ';
+          console.log(calculation);
+        "
+        >
+          -
+        </button>
+
+        <button
+          onclick="
+          calculation += ' /';
+          console.log(calculation);
+        "
+        >
+          /
+        </button>
+
+        <button
+          onclick="
+          calculation += ' * ';
+          console.log(calculation);
+        "
+        >
+          *
+        </button>
+
+        <button
+          onclick="
+          calculation = eval(calculation);
+          console.log(calculation);
+        "
+        >
+          =
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let calculation = "";
+    </script>
+  </body>
+</html>
