@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +6,12 @@
     <title>Calculator</title>
 
     <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
       .container {
         border: 1px solid #000;
         border-radius: 10px;
@@ -13,7 +19,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 12rem;
+        width: 15rem;
         height: auto;
         padding: 10px;
         background-color: #12124f;
@@ -21,21 +27,32 @@
 
       .output {
         border: 1px solid green;
-        width: 9rem;
+        width: 90%;
         height: 50px;
         margin: 10px;
         padding: 0px 5px;
         border-radius: 5px;
-        background-color: #fff;
+        background: #eee;
         color: #000;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        display: flex;
+        justify-content: right;
+        align-items: end;
       }
 
       .punch {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        row-gap: 5px;
-        column-gap: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
         border-radius: 2px;
+      }
+
+      .punchSub {
+        display: flex;
       }
 
       button {
@@ -52,138 +69,78 @@
   </head>
   <body>
     <div class="container">
-      <div class="output"></div>
+      <div class="output js-output"></div>
 
       <div class="punch">
-        <button
-          onclick="
-          updateCalculation('1')
-        "
-        >
-          1
-        </button>
+        <div class="punchSub">
+          <button onclick="updateCalculation('1')">1</button>
 
-        <button
-          onclick="
-          updateCalculation('2')
-        "
-        >
-          2
-        </button>
+          <button onclick="updateCalculation('2')">2</button>
 
-        <button
-          onclick="
-          updateCalculation('3')
-        "
-        >
-          3
-        </button>
+          <button onclick="updateCalculation('3')">3</button>
 
-        <button
-          onclick="
-          updateCalculation('4')
-        "
-        >
-          4
-        </button>
+          <button onclick="updateCalculation('+')">+</button>
+        </div>
 
-        <button
-          onclick="
-          updateCalculation('5')
-        "
-        >
-          5
-        </button>
+        <div class="punchSub">
+          <button onclick="updateCalculation('4')">4</button>
 
-        <button
-          onclick="
-          updateCalculation('6')
-        "
-        >
-          6
-        </button>
+          <button onclick="updateCalculation('5')">5</button>
 
-        <button
-          onclick="
-          updateCalculation('7')
-        "
-        >
-          7
-        </button>
+          <button onclick="updateCalculation('6')">6</button>
 
-        <button
-          onclick="
-          updateCalculation('8')
-        "
-        >
-          8
-        </button>
+          <button onclick="updateCalculation('-')">-</button>
+        </div>
 
-        <button
-          onclick="
-          updateCalculation('9')
-        "
-        >
-          9
-        </button>
+        <div class="punchSub">
+          <button onclick="updateCalculation('7')">7</button>
 
-        <button
-          onclick="
-          updateCalculation('+')
-        "
-        >
-          +
-        </button>
+          <button onclick="updateCalculation('8')">8</button>
 
-        <button
-          onclick="
-          updateCalculation('0')
-        "
-        >
-          0
-        </button>
+          <button onclick="updateCalculation('9')">9</button>
 
-        <button
-          onclick="
-          updateCalculation('-')
-        "
-        >
-          -
-        </button>
+          <button onclick="updateCalculation('*')">*</button>
+        </div>
 
-        <button
-          onclick="
-          updateCalculation('/')
-        "
-        >
-          /
-        </button>
+        <div class="punchSub">
+          <button onclick="clearFunction()" class="js-clear-button">C</button>
 
-        <button
-          onclick="
-          updateCalculation('*')
-        "
-        >
-          *
-        </button>
+          <button onclick="updateCalculation('0')">0</button>
 
-        <button
-          onclick="
-          calculation = eval(calculation);
-          console.log(calculation);
-        "
-        >
-          =
-        </button>
+          <button onclick="updateCalculation('/')">/</button>
+
+          <button onclick="equalTo()">=</button>
+        </div>
+
+        <div class="punchSub">
+          <button>.</button>
+        </div>
       </div>
     </div>
 
     <script>
-      let calculation = "";
+      let calculation = localStorage.getItem("calculation") || "";
 
       function updateCalculation(value) {
         calculation += value;
         console.log(calculation);
+        document.querySelector(".js-output").innerHTML = calculation;
+
+        localStorage.setItem("calculation", calculation);
+      }
+
+      function equalTo() {
+        calculation = eval(calculation);
+        console.log(calculation);
+        document.querySelector(".js-output").innerHTML = calculation;
+      }
+
+      function clearFunction() {
+        calculation = "";
+        document.querySelector(".js-output").innerHTML = "";
+        localStorage.setItem("calculation", "");
+
+        console.log("clicked");
       }
     </script>
   </body>
