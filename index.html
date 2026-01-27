@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="script/index.js" defer></script>
+    <link rel="stylesheet" href="style/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="maker">DEKUNLE</div>
+
+      <div class="output js-output"></div>
+
+      <div class="punch">
+        <div class="punchSub">
+          <button class="gray-line" onclick="updateCalculation('1')">1</button>
+
+          <button class="gray-line" onclick="updateCalculation('2')">2</button>
+
+          <button class="gray-line" onclick="updateCalculation('3')">3</button>
+
+          <button class="orange-line" onclick="updateCalculation('+')">
+            +
+          </button>
+        </div>
+
+        <div class="punchSub">
+          <button class="gray-line" onclick="updateCalculation('4')">4</button>
+
+          <button class="gray-line" onclick="updateCalculation('5')">5</button>
+
+          <button class="gray-line" onclick="updateCalculation('6')">6</button>
+
+          <button class="orange-line" onclick="updateCalculation('-')">
+            -
+          </button>
+        </div>
+
+        <div class="punchSub">
+          <button class="gray-line" onclick="updateCalculation('7')">7</button>
+
+          <button class="gray-line" onclick="updateCalculation('8')">8</button>
+
+          <button class="gray-line" onclick="updateCalculation('9')">9</button>
+
+          <button class="orange-line" onclick="updateCalculation('*')">
+            *
+          </button>
+        </div>
+
+        <div class="punchSub">
+          <button class="gray-line" onclick="updateCalculation('0')">0</button>
+
+          <button class="gray-line" onclick="updateCalculation('.')">.</button>
+
+          <button class="gray-line" onclick="equalTo()">=</button>
+
+          <button class="orange-line" onclick="updateCalculation('/')">
+            /
+          </button>
+        </div>
+
+        <div class="punchSub">
+          <button onclick="clearFunction()" class="js-clear-button gray-line">
+            C
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-weight: 700;
+}
+
+.container {
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 17rem;
+  height: auto;
+  padding: 10px;
+  background-color: #12124f;
+}
+
+.maker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+}
+
+.output {
+  border: 1px solid green;
+  width: 90%;
+  height: 50px;
+  margin: 10px;
+  padding: 0px 5px;
+  border-radius: 5px;
+  background: #eee;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+
+.punch {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 2px;
+}
+
+.punchSub {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.gray-line {
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background-color: #3b3b3b;
+  color: #eee;
+  font-weight: 700;
+  font-family: cursive;
+}
+
+.orange-line {
+  background-color: #f2ad2d;
+  color: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  font-weight: 700;
+  font-family: cursive;
+}
